@@ -1,19 +1,20 @@
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 import { useEvent } from "react-use"
 import { ExtensionMessage } from "@shared/ExtensionMessage"
+import { WebviewType } from "@shared/WebviewMessage"
 import ChatView from "./components/chat/ChatView"
 import HistoryView from "./components/history/HistoryView"
 import SettingsView from "./components/settings/SettingsView"
-import WelcomeView from "./components/welcome/WelcomeView"
 import AccountView from "./components/account/AccountView"
 import { ExtensionStateContextProvider, useExtensionState } from "./context/ExtensionStateContext"
 import { FirebaseAuthProvider } from "./context/FirebaseAuthContext"
 import { vscode } from "./utils/vscode"
 import McpView from "./components/mcp/configuration/McpConfigurationView"
 import { McpViewTab } from "@shared/mcp"
+import WelcomeWrapper from "./components/welcome/WelcomeWrapper"
 
 const AppContent = () => {
-	const { didHydrateState, showWelcome, shouldShowAnnouncement, telemetrySetting, vscMachineId } = useExtensionState()
+	const { didHydrateState, showWelcome, shouldShowAnnouncement } = useExtensionState()
 	const [showSettings, setShowSettings] = useState(false)
 	const hideSettings = useCallback(() => setShowSettings(false), [])
 	const [showHistory, setShowHistory] = useState(false)
@@ -90,7 +91,7 @@ const AppContent = () => {
 	return (
 		<>
 			{showWelcome ? (
-				<WelcomeView />
+				<WelcomeWrapper />
 			) : (
 				<>
 					{showSettings && <SettingsView onDone={hideSettings} />}

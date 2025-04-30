@@ -130,3 +130,5 @@ export type ClineAskResponse = "yesButtonClicked" | "noButtonClicked" | "message
 export type ClineCheckpointRestore = "task" | "workspace" | "taskAndWorkspace"
 
 export type TaskFeedbackType = "thumbs_up" | "thumbs_down"
+
+export type WebviewType = "sidebar" | "tab"

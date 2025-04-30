@@ -148,6 +148,7 @@ export interface ExtensionState {
 	vscMachineId: string
 	globalClineRulesToggles: ClineRulesToggles
 	localClineRulesToggles: ClineRulesToggles
+	showWelcome: boolean
 }
 
 export interface ClineMessage {
