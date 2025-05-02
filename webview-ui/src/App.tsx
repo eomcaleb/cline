@@ -24,6 +24,7 @@ const AppContent = () => {
 
 	const handleMessage = useCallback((e: MessageEvent) => {
 		const message: ExtensionMessage = e.data
+		console.log("Received message in App.tsx:", message)
 		switch (message.type) {
 			case "action":
 				switch (message.action!) {

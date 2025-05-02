@@ -118,7 +118,7 @@ const copyWasmFiles = {
 
 const extensionConfig = {
 	bundle: true,
-	minify: production,
+	minify: false,
 	sourcemap: !production,
 	logLevel: "silent",
 	define: {
