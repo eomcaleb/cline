@@ -61,7 +61,7 @@ jobs:
               run: cd webview-ui && npm ci
 
             - name: Install Publishing Tools
-              run: npm install -g vsce ovsx
+              run: npm install -g @vscode/vsce ovsx
 
             - name: Get Version
               id: get_version
