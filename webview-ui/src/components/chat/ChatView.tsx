@@ -475,7 +475,7 @@ const ChatView = ({ isHidden, showAnnouncement, hideAnnouncement, showHistoryVie
 	const handleMessage = useCallback(
 		(e: MessageEvent) => {
 			const message: ExtensionMessage = e.data
-			console.log("Received message in ChatView:", message)
+			console.log("Received message in ChatView:", JSON.stringify(message, null, 2))
 			switch (message.type) {
 				case "action":
 					switch (message.action!) {
