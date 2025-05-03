@@ -63,7 +63,6 @@ export interface WebviewMessage {
 		| "taskFeedback"
 		| "scrollToSettings"
 		| "getRelativePaths" // Handles single and multiple URI resolution
-		| "searchFiles"
 		| "toggleFavoriteModel"
 		| "grpc_request"
 		| "toggleClineRule"
